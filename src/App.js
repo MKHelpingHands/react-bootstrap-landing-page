@@ -22,7 +22,7 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.renderSmallForm = this.renderSmallForm.bind(this);
     this.renderLargeForm = this.renderLargeForm.bind(this);
-    //this.renderSocialIcons = this.renderSocialIcons.bind(this);
+    this.renderSocialIcons = this.renderSocialIcons.bind(this);
   }
 
   componentDidMount() {
@@ -126,16 +126,66 @@ class App extends Component {
     console.log(e.target.form[0].value);
   }
 
+  renderSocialIcons() {
+    return (
+      <Row>
+        <Col xs={12}
+          style={{
+            fontSize: 32,
+            paddingTop: 35,
+            position: 'fixed',
+            bottom: 10,
+            textAlign: 'center'
+          }}>
+            <a href="#"
+              style={{
+                paddingLeft: 15,
+                color: '#eee'
+              }}>
+              <FontAwesome icon="google-plus" />
+            </a>
+            <a href="#"
+              style={{
+                paddingLeft: 15,
+                color: '#eee'
+              }}>
+              <FontAwesome icon="facebook" />
+            </a>
+            <a href="#"
+              style={{
+                paddingLeft: 15,
+                color: '#eee'
+              }}>
+              <FontAwesome icon="twitter" />
+            </a>
+            <a href="#"
+              style={{
+                paddingLeft: 15,
+                color: '#eee'
+              }}>
+              <FontAwesome icon="github" />
+            </a>
+            <a href="#"
+              style={{
+                paddingLeft: 15,
+                color: '#eee'
+              }}>
+              <FontAwesome icon="pinterest" />
+            </a>
+          </Col>
+      </Row>
+    );
+  }
+
   render() {
     let vWidth = this.state.vWidth;
     let vHeight = this.state.vHeight;
     let formCode = vWidth < 880
       ? this.renderSmallForm()
       : this.renderLargeForm();
-    /*let socialIcons = vHeight >= 320
+    let socialIcons = vHeight >= 320
       ? this.renderSocialIcons()
       :null;
-    */
 
     return (
       <div>
@@ -194,6 +244,7 @@ class App extends Component {
               </p>
             </Col>
           </Row>
+          { socialIcons }
         </Grid>
       </div>
     );
