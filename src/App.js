@@ -6,7 +6,7 @@ import { Grid,
   Carousel,
   CarouselItem,
   FormGroup, FormControl, InputGroup } from 'react-bootstrap';
-import './App.css';
+import FontAwesome from './components/fontawesome';
 
 class App extends Component {
   constructor() {
